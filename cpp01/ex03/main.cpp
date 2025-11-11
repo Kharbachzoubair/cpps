@@ -1,19 +1,18 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 05:24:47 by zkharbac          #+#    #+#             */
-/*   Updated: 2025/11/11 05:44:31 by marvin           ###   ########.fr       */
-/*                                                                            */
+/* */
+/* :::      ::::::::   */
+/* main.cpp                                           :+:      :+:    :+:   */
+/* +:+ +:+         +:+     */
+/* By: zkharbac <zkharbac@student.42.fr>          +#+  +:+       +#+        */
+/* Created: 2025/11/09 05:24:47 by zkharbac          #+#    #+#             */
+/* Updated: 2025/11/11 14:03:03 by zkharbac         ###   ########.fr       */
+/* */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <Weapon.hpp>
+#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include <iostream>
 
 int main()
 {
