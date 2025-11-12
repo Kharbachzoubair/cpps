@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zkharbac <zkharbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 05:46:26 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/11 05:46:26 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/12 15:28:24 by zkharbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <iostream>
+
 #include <fstream>
+#include <iostream>
 #include <string>
 
 int main(int argc, char **argv)
 {
-    // 1. Argument Validation
+    
     if (argc != 4)
     {
-        std::cerr << "Usage: " << argv[0] << " <filename> <s1> <s2>" << std::endl;
+        std::cout << "Usage: " << argv[0] << " <filename> <s1> <s2>" << std::endl;
         return 1;
     }
     
-    // Store arguments
     std::string filename = argv[1];
     std::string s1 = argv[2];
     std::string s2 = argv[3];
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     // Critical check: s1 cannot be empty (prevents infinite loop)
     if (s1.empty())
     {
-        std::cerr << "Error: s1 cannot be empty." << std::endl;
+        std::cout << "Error: s1 cannot be empty." << std::endl;
         return 1;
     }
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     std::ifstream input_file(filename.c_str());
     if (!input_file.is_open())
     {
-        std::cerr << "Error: cannot open file " << filename << std::endl;
+        std::cout << "Error: cannot open file " << filename << std::endl;
         return 1;
     }
 
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     if (!output_file.is_open())
     {
         input_file.close(); 
-        std::cerr << "Error: cannot create output file '" << output_filename << "'." << std::endl;
+        std::cout << "Error: cannot create output file '" << output_filename << "'." << std::endl;
         return 1;
     }
 

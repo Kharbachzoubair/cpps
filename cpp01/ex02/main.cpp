@@ -6,7 +6,7 @@
 /*   By: zkharbac <zkharbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 04:59:38 by zkharbac          #+#    #+#             */
-/*   Updated: 2025/11/09 05:08:03 by zkharbac         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:20:35 by zkharbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main()
 {
     std::string str= "HI THIS IS BRAIN";
+    std::string str2= "HI THIS IS BRAIN";
     std::string *stringPTR=&str;
     std::string &stringREF=str;
 
