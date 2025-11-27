@@ -1,23 +1,26 @@
-NAME = ex00_poly
+NAME = Animal
+
 CXX = c++
+
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp \
-	   Animal.cpp Dog.cpp Cat.cpp \
-	   WrongAnimal.cpp WrongCat.cpp
+INCLUDES = Animal.hpp Dog.hpp Cat.hpp WrongCat.hpp WrongAnimal.hpp
 
-OBJS = $(SRCS:.cpp=.o)
+SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
+
+OBJ = $(SRC:.cpp=.o)
+
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o: %.cpp
+%.o: %.cpp $(INCLUDES)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
