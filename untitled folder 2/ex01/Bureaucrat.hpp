@@ -5,6 +5,9 @@
 # include <string>
 # include <exception>
 
+// Forward declaration: كنقولو للكومبيلر بلي كاين واحد الكلاص سميتها Form غانخدمو بها
+class Form; 
+
 class Bureaucrat {
 private:
     const std::string _name;
@@ -22,6 +25,9 @@ public:
 
     void        incrementGrade();
     void        decrementGrade();
+
+    // الدالة اللي كانت ناقصاك فـ الـ Header
+    void        signForm(Form& f);
 
     class GradeTooHighException : public std::exception {
     public:

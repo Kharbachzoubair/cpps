@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp" // ضروري جداً باش يتحل مشكل Incomplete type
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {}
 
@@ -13,7 +14,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) {}
 
-// --- الـ Assignment Operator اللي كان ناقص ---
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
     if (this != &rhs) {
         this->_grade = rhs._grade;
@@ -21,36 +21,36 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
     return *this;
 }
 
-// --- الـ Destructor اللي كان ناقص وهو سبب الـ Error ---
 Bureaucrat::~Bureaucrat() {}
 
-void Bureaucrat::incrementGrade()
-{
+void Bureaucrat::incrementGrade() {
     if (_grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
     _grade--;
 }
 
-void Bureaucrat::decrementGrade()
-{
+void Bureaucrat::decrementGrade() {
     if (_grade + 1 > 150)
         throw Bureaucrat::GradeTooLowException();
     _grade++;
 }
 
-std::string Bureaucrat::getName() const 
-{
-    return _name;
+// تطبيق الدالة signForm مع معالجة الاستثناءات
+void Bureaucrat::signForm(Form &f) {
+    try {
+        f.beSigned(*this);
+        std::cout << _name << " signed " << f.getName() << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << _name << " couldn't sign " << f.getName() 
+                  << " because " << e.what() << std::endl;
+    }
 }
 
-int Bureaucrat::getGrade() const
-{
-    return _grade;
-}
+std::string Bureaucrat::getName() const { return _name; }
+int Bureaucrat::getGrade() const { return _grade; }
 
-// تصحيح الـ Reference فـ البارامتر الثاني
-std::ostream& operator<<(std::ostream& o, const Bureaucrat &rhs)
-{
+std::ostream& operator<<(std::ostream& o, const Bureaucrat &rhs) {
     o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
     return o;
 }
