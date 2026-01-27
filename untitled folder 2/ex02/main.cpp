@@ -17,14 +17,13 @@ int main() {
 
     std::cout << "\n--- TEST 1: Shrubbery (Sign 145, Exec 137) ---" << std::endl;
     ShrubberyCreationForm shrub("Garden");
-    intern.signForm(shrub);    // Intern is 142, can sign 145
-    intern.executeForm(shrub); // Intern is 142, CANNOT exec 137 -> Fail
-    boss.executeForm(shrub);   // Boss is 1, CAN exec -> Success
+    intern.signForm(shrub);    
+    intern.executeForm(shrub); 
+    boss.executeForm(shrub);   
 
     std::cout << "\n--- TEST 2: Robotomy (Sign 72, Exec 45) ---" << std::endl;
     RobotomyRequestForm robot("Target-X");
-    middleManager.signForm(robot); // Manager is 60, can sign 72
-    // Run multiple times to see the 50/50 chance
+    middleManager.signForm(robot); 
     boss.executeForm(robot);
     boss.executeForm(robot);
     boss.executeForm(robot);
@@ -36,9 +35,10 @@ int main() {
 
     std::cout << "\n--- TEST 4: Security (Execution without signature) ---" << std::endl;
     PresidentialPardonForm unsignedForm("Intruder");
-    boss.executeForm(unsignedForm); // Should print error: Form is not signed
+    boss.executeForm(unsignedForm); 
 
-    std::cout << "\n--- TEST 5: Grade Exceptions (Too Low) ---" << std::endl;
-    try {
-        Bureaucrat fail("Invalid", 151);
-    } catch (std::exception &e) {
+    // std::cout << "\n--- TEST 5: Grade Exceptions (Too Low) ---" << std::endl;
+    // try {
+    //     Bureaucrat fail("Invalid", 151);
+    // } catch (std::exception &e) {
+}

@@ -20,10 +20,8 @@ void AForm::beSigned(const Bureaucrat& b) {
 }
 
 void AForm::execute(Bureaucrat const & executor) const {
-    if (!_isSigned) 
-        throw FormNotSignedException();
-    if (executor.getGrade() > _gradeToExec) 
-        throw GradeTooLowException();
+    if (!_isSigned) throw FormNotSignedException();
+    if (executor.getGrade() > _gradeToExec) throw GradeTooLowException();
     this->executeAction();
 }
 

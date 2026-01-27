@@ -13,7 +13,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) {}
 
-// --- الـ Assignment Operator اللي كان ناقص ---
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
     if (this != &rhs) {
         this->_grade = rhs._grade;
@@ -21,7 +20,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
     return *this;
 }
 
-// --- الـ Destructor اللي كان ناقص وهو سبب الـ Error ---
+
 Bureaucrat::~Bureaucrat() {}
 
 void Bureaucrat::incrementGrade()
@@ -48,7 +47,6 @@ int Bureaucrat::getGrade() const
     return _grade;
 }
 
-// تصحيح الـ Reference فـ البارامتر الثاني
 std::ostream& operator<<(std::ostream& o, const Bureaucrat &rhs)
 {
     o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";

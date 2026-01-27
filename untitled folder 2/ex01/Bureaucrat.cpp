@@ -35,7 +35,6 @@ void Bureaucrat::decrementGrade() {
     _grade++;
 }
 
-// تطبيق الدالة signForm مع معالجة الاستثناءات
 void Bureaucrat::signForm(Form &f) {
     try {
         f.beSigned(*this);

@@ -1,3 +1,4 @@
+// AForm.hpp
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
@@ -19,6 +20,8 @@ public:
     int getGradeToExec() const;
 
     void beSigned(const Bureaucrat& b);
+    
+    // The subject's required execution logic
     void execute(Bureaucrat const & executor) const;
     virtual void executeAction() const = 0; 
 
