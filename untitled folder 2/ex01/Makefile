@@ -1,5 +1,4 @@
 NAME    = form
-# تأكد بلي Form.cpp كاينة هنا وسط الملفات
 SRCS    = main.cpp Bureaucrat.cpp Form.cpp 
 OBJS    = $(SRCS:.cpp=.o)
 CC      = c++

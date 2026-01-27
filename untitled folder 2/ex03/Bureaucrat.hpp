@@ -25,17 +25,17 @@ public:
     void        incrementGrade();
     void        decrementGrade();
 
-
     void        signForm(AForm& f);
-    void executeForm(AForm const & form) const;
+    void        executeForm(AForm const & form) const;
+
     class GradeTooHighException : public std::exception {
     public:
-        virtual const char* what() const throw() { return "Grade too high"; }
+        virtual const char* what() const throw();
     };
 
     class GradeTooLowException : public std::exception {
     public:
-        virtual const char* what() const throw() { return "Grade too low"; }
+        virtual const char* what() const throw();
     };
 };
 

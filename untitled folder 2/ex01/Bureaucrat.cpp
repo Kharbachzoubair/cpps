@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp" // ضروري جداً باش يتحل مشكل Incomplete type
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {}
 
@@ -47,7 +47,16 @@ void Bureaucrat::signForm(Form &f) {
 }
 
 std::string Bureaucrat::getName() const { return _name; }
+
 int Bureaucrat::getGrade() const { return _grade; }
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+    return "Grade is too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "Grade is too low!";
+}
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat &rhs) {
     o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";

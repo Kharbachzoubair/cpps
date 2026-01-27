@@ -8,8 +8,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& src)
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs){
     if (this != &rhs) {
-        // Since _target is likely const, we don't assign it here
-        // The grade and name in AForm are also const.
     }
     return *this;
 }
@@ -22,8 +20,6 @@ void ShrubberyCreationForm::executeAction() const {
         std::cerr << "Error: Could not create file." << std::endl;
         return;
     }
-
-    // Note: Every \ must be written as \\ to avoid escape sequence errors
     ofs << "               ,@@@@@@@," << std::endl;
     ofs << "       ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl;
     ofs << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;

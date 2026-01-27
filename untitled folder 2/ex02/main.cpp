@@ -7,7 +7,6 @@
 #include <cstdlib>
 
 int main() {
-    // Seed for Robotomy random success/failure
     std::srand(std::time(NULL));
 
     std::cout << "--- BUREAUCRAT INITIALIZATION ---" << std::endl;
@@ -37,8 +36,4 @@ int main() {
     PresidentialPardonForm unsignedForm("Intruder");
     boss.executeForm(unsignedForm); 
 
-    // std::cout << "\n--- TEST 5: Grade Exceptions (Too Low) ---" << std::endl;
-    // try {
-    //     Bureaucrat fail("Invalid", 151);
-    // } catch (std::exception &e) {
 }

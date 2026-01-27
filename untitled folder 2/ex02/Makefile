@@ -1,8 +1,6 @@
-NAME        = form
+NAME        = Aform
 CC          = c++
 FLAGS       = -Wall -Wextra -Werror -std=c++98
-
-# Add all your implementation files here
 SRCS        = main.cpp \
               Bureaucrat.cpp \
               AForm.cpp \

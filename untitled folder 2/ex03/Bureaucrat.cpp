@@ -1,6 +1,7 @@
-// Bureaucrat.cpp
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
     if (grade < 1) throw GradeTooHighException();
@@ -17,6 +18,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
 Bureaucrat::~Bureaucrat() {}
 
 std::string Bureaucrat::getName() const { return _name; }
+
 int Bureaucrat::getGrade() const { return _grade; }
 
 void Bureaucrat::incrementGrade() {
@@ -47,7 +49,15 @@ void Bureaucrat::executeForm(AForm const & form) const {
     }
 }
 
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+    return "Bureaucrat: Grade too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "Bureaucrat: Grade too low!";
+}
+
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& i) {
-    o << i.getName() << ", bureaucrat grade " << i.getGrade();
+    o << i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
     return o;
 }

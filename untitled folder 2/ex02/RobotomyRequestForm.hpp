@@ -3,7 +3,7 @@
 
 #include "AForm.hpp"
 #include <iostream>
-#include <cstdlib> // For rand() and srand()
+#include <cstdlib>
 
 class RobotomyRequestForm : public AForm {
 private:

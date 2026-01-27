@@ -20,8 +20,6 @@ void ShrubberyCreationForm::executeAction() const {
         std::cerr << "Error: Could not create file." << std::endl;
         return;
     }
-
-    // Note: Every \ must be written as \\ to avoid escape sequence errors
     ofs << "               ,@@@@@@@," << std::endl;
     ofs << "       ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl;
     ofs << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;
